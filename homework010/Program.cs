@@ -4,20 +4,28 @@
 // 782 -> 8 
 // 918 -> 1
 
-// Второй вариант:
+// Первый вариант:
 
 Console.WriteLine("Введите трёхзначное число");
 int numberA = Convert.ToInt32(Console.ReadLine());
-string numberAText = Convert.ToString(numberA);
-Console.WriteLine($"{"Вторая цифра"} {numberAText[1]}");
+int length = numberA.ToString().Length;
+if (length < 3 || length > 3)
+{
+    Console.WriteLine("А это разве трёхзначное число?");
+}
+else
+{
+Console.WriteLine($"{"Вторая цифра числа"} {CountSecond(numberA)}");
+}
 
-// Первый вариант:
+int CountSecond(int num1)
+{
+     return ((num1 / 10) % 10);
+}
+
+// Второй вариант (по мотивам задачи 13):
 
 // Console.WriteLine("Введите трёхзначное число");
 // int numberA = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine(CountSecond(numberA));
-
-// int CountSecond(int num1)
-// {
-//     return (num1 / 10) - (num1 / 100 * 10);
-// }
+// string numberAText = Convert.ToString(numberA);
+// Console.WriteLine($"{"Вторая цифра"} {numberAText[1]}");
